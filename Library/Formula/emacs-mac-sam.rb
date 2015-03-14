@@ -3,7 +3,7 @@ require "formula"
 class EmacsMacSam < Formula
   homepage 'http://www.gnu.org/software/emacs/'
 
-  url "https://github.com/Gwydir8/emacs-mac-port.git"
+  url "https://github.com/Gwydir8/emacs-mac-port.git", :branch => "gwydir8/master"
   version 'emacs-24.4.90-mac-5.4'
 
   conflicts_with 'emacs-mac', :because => 'both install `emacs` binaries'
@@ -78,7 +78,7 @@ class EmacsMacSam < Formula
       system "rm -f #{icons}/Emacs.icns"
       system "cp #{icons}/Emacs.icns.modern #{icons}/Emacs.icns"
     end
-    
+
     # build
     system "./configure", *args
     system "make"
